@@ -1,4 +1,4 @@
-# IMARIXA — Website
+# IMARIXA Tech — Website
 
 **Intelligence. Innovation. Impact.**
 
