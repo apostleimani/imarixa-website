@@ -157,7 +157,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   font-weight: 700;
   font-size: 1.15rem;
 }
-.nav-brand img { height: 30px; width: auto; }
+.nav-brand img { height: 44px; width: auto; }
 .nav-links {
   display: flex;
   gap: 2rem;
@@ -417,6 +417,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 /* ---------- Email section ---------- */
+.advert-visual { max-width: 760px; margin: 0 auto; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
+.advert-visual img { display: block; width: 100%; height: auto; }
 .email-section { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
 .email-visual { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
 .email-benefits { display: flex; flex-direction: column; gap: 1.1rem; margin: 1.75rem 0 2rem; }
@@ -521,11 +523,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .quote-side-item span { color: var(--ink-soft); font-size: 0.9rem; }
 
 /* ---------- Contact ---------- */
-.contact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+.contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 .contact-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 1.4rem; background: var(--panel); text-align: center; }
 .contact-card svg { width: 26px; height: 26px; color: var(--cyan); margin: 0 auto 0.75rem; }
 .contact-card strong { display: block; font-size: 0.92rem; margin-bottom: 0.3rem; }
 .contact-card span { color: var(--ink-soft); font-size: 0.85rem; word-break: break-word; }
+.contact-card span a { color: inherit; }
+.contact-card span a:hover { color: var(--cyan); }
 @media (max-width: 860px) { .contact-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 480px) { .contact-grid { grid-template-columns: 1fr; } }
 
@@ -588,7 +592,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   padding-bottom: 2.5rem;
   border-bottom: 1px solid var(--line);
 }
-.footer-brand img { height: 32px; margin-bottom: 1rem; }
+.footer-brand img { height: 44px; width: auto; margin-bottom: 1rem; }
 .footer-brand p { color: var(--ink-soft); font-size: 0.9rem; max-width: 32ch; }
 .footer-col h4 { font-size: 0.85rem; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 1rem; font-family: var(--font-body); font-weight: 600; }
 .footer-col ul { display: flex; flex-direction: column; gap: 0.65rem; }
