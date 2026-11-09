@@ -1,8 +1,8 @@
-// IMARIXA — main.js
+// 𝐈𝐦𝐚𝐫𝐢𝐱𝐚 𝐓𝐞𝐜𝐡 — main.js
 (function () {
   'use strict';
 
-  var WHATSAPP_NUMBER = '639667536305';
+  var WHATSAPP_NUMBER = '255749256665';
 
   /* Mobile menu toggle */
   var navToggle = document.getElementById('navToggle');
@@ -40,7 +40,7 @@
         }
       }
 
-      var message = 'Hello IMARIXA, I am interested in the ' + name +
+      var message = 'Hello Imarixa Tech, I am interested in the ' + name +
         ' package priced at ' + price + '. I would like to know the next steps.';
       var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(message);
       window.open(url, '_blank', 'noopener');
@@ -64,7 +64,7 @@
       var description = data.get('description') || '';
 
       var lines = [
-        'Hello IMARIXA, I would like a quote.',
+        'Hello Imarixa Tech, I would like a quote.',
         'Name: ' + name,
         'Phone: ' + phone,
         'Service: ' + service,
