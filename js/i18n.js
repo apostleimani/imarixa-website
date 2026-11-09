@@ -10,8 +10,8 @@
   var WA = 'https://wa.me/255749256665';
 
   var PRICES = {
-    tz: { cur: 'TZS', landing: '450,000', business: '950,000', pro: '1,450,000', store: '2,800,000', renew: '120,000' },
-    ph: { cur: '₱', landing: '8,500', business: '18,000', pro: '32,000', store: '65,000', renew: '4,500' }
+    tz: { cur: 'TZS', landing: '450,000', business: '950,000', pro: '1,450,000', store: '2,800,000', renewLB: '150,000', renewPro: '280,000', renewStore: '600,000' },
+    ph: { cur: '₱', landing: '8,500', business: '18,000', pro: '32,000', store: '65,000' }
   };
   var NAMES = { landing: 'Landing', business: 'Business', pro: 'Business Pro', store: 'Online Store' };
 
@@ -31,6 +31,10 @@
   "hero.t1": "Tanzania, Philippines &amp; international clients",
   "hero.t2": "Hosting &amp; domain included",
   "hero.t3": "Mobile-first &amp; SEO ready",
+  "nm.kicker": "Happy New Month",
+  "nm.h2": "Welcome to November 2026",
+  "nm.p": "It is the 11th month of 2026. Invest, grow and enjoy.",
+  "nm.wa": "Chat on WhatsApp",
   "svc.kicker": "What we do",
   "svc.h2": "Technology services built around real business needs",
   "svc.p": "From your first website to a full business system — every service is designed to help you reach more customers and run more efficiently.",
@@ -81,6 +85,12 @@
   "per.year": "/ year",
   "pk.renewline": "Hosting &amp; maintenance from year 2: <strong style=\"color:var(--gold)\">{renew}</strong>",
   "pk.renewbtn": "Ask about renewal",
+  "pk.renew.title": "Hosting &amp; Maintenance (Year 2+):",
+  "pk.renew.lb": "Landing / Business",
+  "pk.renew.pro": "Business Pro",
+  "pk.renew.store": "Online Store",
+  "pk.renew.ask": "Ask us",
+  "per.yr": "/yr",
   "pk.offer": "Launch offer: 15% discount for the first 10 customers.",
   "ab.kicker": "About Imarixa Tech",
   "ab.p": "Imarixa Tech is a technology and innovation company focused on building intelligent digital solutions that transform ideas, solve real-world problems, and create meaningful impact.",
@@ -177,7 +187,7 @@
   "faq.1.q": "How long does a website take to build?",
   "faq.1.a": "Timelines depend on the package and how quickly content is provided. We'll confirm an estimated delivery date once your project is scoped.",
   "faq.2.q": "What's included in hosting &amp; domain?",
-  "faq.2.a": "Every package includes hosting and domain registration for the first year. From year two, hosting and maintenance is {renew}.",
+  "faq.2.a": {"tz": "Every package includes hosting and domain registration for the first year. From year two, hosting and maintenance is TZS 150,000/year for Landing and Business, TZS 280,000/year for Business Pro and TZS 600,000/year for Online Store.", "ph": "Every package includes hosting and domain registration for the first year. From year two, message us on WhatsApp for hosting and maintenance pricing."},
   "faq.3.q": "Can I upgrade my package later?",
   "faq.3.a": "Yes. Many clients start with Landing or Business and upgrade to Business Pro or Online Store as their needs grow.",
   "faq.4.q": "Do you work with clients outside Tanzania?",
@@ -217,6 +227,10 @@
   "hero.t1": "Wateja wa Tanzania, Ufilipino na kimataifa",
   "hero.t2": "Hosting na domain vimejumuishwa",
   "hero.t3": "Inafaa simu na tayari kwa SEO",
+  "nm.kicker": "Heri ya Mwezi Mpya",
+  "nm.h2": "Karibu Novemba 2026",
+  "nm.p": "Huu ni mwezi wa 11 wa mwaka 2026. Wekeza, kua na ufurahie.",
+  "nm.wa": "Wasiliana nasi WhatsApp",
   "svc.kicker": "Tunachofanya",
   "svc.h2": "Huduma za teknolojia zilizojengwa kulingana na mahitaji halisi ya biashara",
   "svc.p": "Kuanzia tovuti yako ya kwanza hadi mfumo kamili wa biashara — kila huduma imeundwa kukusaidia kufikia wateja zaidi na kuendesha biashara kwa ufanisi zaidi.",
@@ -267,6 +281,12 @@
   "per.year": "/ mwaka",
   "pk.renewline": "Hosting na matengenezo kuanzia mwaka wa 2: <strong style=\"color:var(--gold)\">{renew}</strong>",
   "pk.renewbtn": "Uliza kuhusu upyaisho",
+  "pk.renew.title": "Hosting na Matengenezo (Mwaka wa 2+):",
+  "pk.renew.lb": "Landing / Business",
+  "pk.renew.pro": "Business Pro",
+  "pk.renew.store": "Online Store",
+  "pk.renew.ask": "Uliza",
+  "per.yr": "/mwaka",
   "pk.offer": "Ofa ya uzinduzi: punguzo la 15% kwa wateja 10 wa kwanza.",
   "ab.kicker": "Kuhusu Imarixa Tech",
   "ab.p": "Imarixa Tech ni kampuni ya teknolojia na ubunifu inayojikita katika kujenga suluhisho mahiri za kidijitali zinazobadilisha mawazo, kutatua matatizo halisi na kuleta matokeo yenye maana.",
@@ -363,7 +383,7 @@
   "faq.1.q": "Tovuti inachukua muda gani kutengenezwa?",
   "faq.1.a": "Muda hutegemea kifurushi na jinsi maudhui yanavyotolewa haraka. Tutakuthibitishia tarehe ya makadirio ya kukabidhi mara mradi wako utakapopangwa.",
   "faq.2.q": "Hosting na domain inajumuisha nini?",
-  "faq.2.a": "Kila kifurushi kinajumuisha hosting na usajili wa domain kwa mwaka wa kwanza. Kuanzia mwaka wa pili, hosting na matengenezo ni {renew}.",
+  "faq.2.a": {"tz": "Kila kifurushi kinajumuisha hosting na usajili wa domain kwa mwaka wa kwanza. Kuanzia mwaka wa pili, hosting na matengenezo ni TZS 150,000/mwaka kwa Landing na Business, TZS 280,000/mwaka kwa Business Pro na TZS 600,000/mwaka kwa Online Store.", "ph": "Kila kifurushi kinajumuisha hosting na usajili wa domain kwa mwaka wa kwanza. Kuanzia mwaka wa pili, tuandikie WhatsApp kupata bei za hosting na matengenezo."},
   "faq.3.q": "Naweza kuboresha kifurushi changu baadaye?",
   "faq.3.a": "Ndiyo. Wateja wengi huanza na Landing au Business na kuboresha hadi Business Pro au Online Store mahitaji yao yanapokua.",
   "faq.4.q": "Mnafanya kazi na wateja walio nje ya Tanzania?",
@@ -413,7 +433,7 @@
   function t(key) {
     var v = raw(key);
     if (typeof v !== 'string') return v;
-    return v.replace(/\{renew\}/g, money(market, 'renew') + ' ' + raw('per.year'));
+    return v;
   }
 
   function detectLang() {
@@ -456,6 +476,11 @@
       var amount = card.querySelector('.price-amount');
       if (amount) amount.innerHTML = '<span class="cur">' + p.cur + '</span>' + (market === 'ph' ? '' : ' ') + p[k];
       card.setAttribute('data-price', (k === 'store' ? 'starting ' : '') + money(market, k));
+    });
+
+    qsa('[data-renew]').forEach(function (el) {
+      var k = el.getAttribute('data-renew');
+      el.textContent = PRICES[market][k] ? money(market, k) + t('per.yr') : t('pk.renew.ask');
     });
 
     qsa('option[data-pkg]').forEach(function (o) {
