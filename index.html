@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Imarixa Tech — Intelligence. Innovation. Impact. | Website & Software Development, Africa & Asia</title>
-<meta name="description" content="Imarixa Tech builds intelligent websites, e-commerce stores, business software and AI-powered digital solutions for businesses in Tanzania, the Philippines and beyond. Websites from TZS 450,000 or ₱8,500.">
+<meta name="description" content="Imarixa Tech builds intelligent websites, e-commerce stores, business software and AI-powered digital solutions for businesses in Tanzania and beyond. Websites from TZS 450,000.">
 <link rel="canonical" href="https://www.imarixatech.com/">
 
 <!-- Favicons -->
@@ -13,7 +13,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/favicon-16.png">
 <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#060b1f">
+<meta name="theme-color" content="#dcefff">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -85,7 +85,6 @@
         <ul class="lang-menu" id="langMenu" hidden>
           <li><button type="button" data-lang="en">English</button></li>
           <li><button type="button" data-lang="sw">Kiswahili</button></li>
-          <li><button type="button" data-lang="tl">Tagalog</button></li>
         </ul>
       </div>
       <a href="#contact" class="btn btn-outline" data-i18n="nav.quote">Get a Quote</a>
@@ -109,9 +108,29 @@
 
 <main id="main">
 
+  <!-- ============ TOP BANNER ============ -->
+  <section class="top-banner" id="home">
+    <img src="assets/images/hero-founder-devices.webp" alt="Imarixa Tech founder with laptop and phone website mockups. Intelligence. Innovation. Impact." width="1600" height="612" fetchpriority="high">
+  </section>
+
+  <!-- ============ LOGO REVEAL VIDEO ============ -->
+  <section class="top-video" aria-label="Imarixa Tech logo animation">
+    <div class="container">
+      <div class="hero-visual">
+        <video id="introVideo" autoplay playsinline preload="auto" width="1920" height="1080" aria-label="Imarixa Tech logo animation">
+          <source src="assets/video/logo-reveal.mp4" type="video/mp4">
+        </video>
+        <button type="button" id="introSound" class="intro-sound" aria-label="Sound" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path class="snd-on" d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/><path class="snd-off" d="M22 9l-6 6M16 9l6 6"/></svg>
+          <span id="introSoundLabel">Sound</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ HERO ============ -->
-  <section class="hero" id="home">
-    <div class="container hero-grid">
+  <section class="hero" id="intro">
+    <div class="container hero-grid hero-grid--single">
       <div>
         <span class="hero-eyebrow">Intelligence. Innovation. Impact.</span>
         <h1 data-i18n="hero.title">Building intelligent technology for a <span class="accent">changing world</span>.</h1>
@@ -134,15 +153,6 @@
             <span data-i18n="hero.t3">Mobile-first &amp; SEO ready</span>
           </div>
         </div>
-      </div>
-      <div class="hero-visual">
-        <video id="introVideo" autoplay playsinline preload="auto" poster="assets/images/hero-founder-devices.webp" width="1920" height="1080" aria-label="Imarixa Tech logo animation">
-          <source src="assets/video/logo-reveal.mp4" type="video/mp4">
-        </video>
-        <button type="button" id="introSound" class="intro-sound" aria-label="Sound" hidden>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path class="snd-on" d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/><path class="snd-off" d="M22 9l-6 6M16 9l6 6"/></svg>
-          <span id="introSoundLabel">Sound</span>
-        </button>
       </div>
     </div>
   </section>
@@ -256,10 +266,6 @@
         <span class="section-kicker" data-i18n="pk.kicker">Website packages</span>
         <h2 data-i18n="pk.h2">Choose the right package for your business</h2>
         <p data-i18n="pk.p">Every package includes hosting and domain for the first year. Prices are shown in Tanzanian Shillings (TZS).</p>
-        <div class="market-toggle" role="group" aria-label="Pricing region" data-i18n-label="mk.label">
-          <button type="button" data-market="tz" data-i18n="mk.tz" aria-pressed="true">🇹🇿 Tanzania · TZS</button>
-          <button type="button" data-market="ph" data-i18n="mk.ph" aria-pressed="false">🇵🇭 Philippines · ₱</button>
-        </div>
       </div>
 
       <div class="pricing-grid" id="pricingGrid">
@@ -323,7 +329,7 @@
       </div>
 
       <div class="pricing-footnote">
-        <span data-i18n="pk.renewline">Hosting &amp; maintenance from year 2: <strong style="color:var(--gold)">TZS 120,000 / year</strong></span>
+        <span data-i18n="pk.renewline">Hosting &amp; maintenance from year 2: <strong style="color:var(--gold-ink)">TZS 120,000 / year</strong></span>
         <a href="#contact" class="btn btn-ghost" data-i18n="pk.renewbtn">Ask about renewal</a>
       </div>
 
@@ -343,6 +349,9 @@
         </a>
         <a class="promo-card" href="assets/images/promo-website-en.webp" target="_blank" rel="noopener">
           <img src="assets/images/promo-website-en.webp" alt="Imarixa Tech professional website development packages" width="1024" height="1536" loading="lazy">
+        </a>
+        <a class="promo-card" href="assets/images/mobile-app-promo-full-app.webp" target="_blank" rel="noopener">
+          <img src="assets/images/mobile-app-promo-full-app.webp" alt="Imarixa Tech full mobile app development, from idea to Play Store (Kiswahili)" width="1000" height="1450" loading="lazy">
         </a>
         <a class="promo-card" href="assets/images/mobile-app-promo.webp" target="_blank" rel="noopener">
           <img src="assets/images/mobile-app-promo.webp" alt="Imarixa Tech website, mobile app and business system services (Kiswahili)" width="1148" height="1370" loading="lazy">
@@ -416,7 +425,7 @@
         <div class="why-card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>
           <h3 data-i18n="why.5.t">Tanzania, Philippines &amp; international</h3>
-          <p data-i18n="why.5.d">We serve businesses in Tanzania, the Philippines and abroad, with payment options for each.</p>
+          <p>We serve businesses in Tanzania, the Philippines and abroad.</p>
         </div>
         <div class="why-card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1s-.5-.1-.7.1-.7 1-.9 1.2-.4.2-.7.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2c-.2-.3 0-.5.1-.6l.4-.5.2-.4v-.4c-.1-.1-.7-1.7-1-2.3s-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4a2.6 2.6 0 0 0-.8 2c0 1.1.8 2.3 1 2.5s1.6 2.6 4 3.6c2.3 1 2.3.7 2.7.6s1.7-.7 2-1.4.2-1.2.1-1.4-.2-.2-.4-.3z"/></svg>
@@ -431,42 +440,12 @@
   <section class="section-pad section-alt" id="payments">
     <div class="container">
       <div class="section-head">
-        <span class="section-kicker" data-i18n="pay.kicker">Payment options</span>
-        <h2 data-i18n="pay.h2">Pay the way that works for you</h2>
-        <p data-i18n="pay.p">Imarixa Tech accepts mobile money, GCash, international card payments and bank transfer.</p>
+        <span class="section-kicker">Payment</span>
+        <h2>Pay by bank transfer</h2>
+        <p>Payments are received by bank transfer to our National Bank of Commerce (NBC) account.</p>
       </div>
 
-      <div class="payments-grid">
-        <div class="payment-card">
-          <h3>M-PESA</h3>
-          <div class="num">+255 749 256 665</div>
-          <p data-i18n="pay.mpesa">Send payment directly via M-PESA.</p>
-        </div>
-        <div class="payment-card">
-          <h3>Airtel Money</h3>
-          <div class="num">+255 665 955 665</div>
-          <p data-i18n="pay.airtel">Send payment directly via Airtel Money.</p>
-        </div>
-        <div class="payment-card">
-          <h3>Mixx by Yas</h3>
-          <div class="num">+255 776 723 665</div>
-          <p data-i18n="pay.mixx">Send payment directly via Mixx by Yas.</p>
-        </div>
-        <div class="payment-card">
-          <h3>Visa / Mastercard</h3>
-          <p data-i18n="pay.card">Card payment through a secure payment gateway. <span class="badge">Gateway configuration required</span></p>
-        </div>
-        <div class="payment-card">
-          <h3>GCash (Asia)</h3>
-          <div class="num">+63 966 753 6305</div>
-          <p data-i18n="pay.gcash">For clients paying from the Philippines and wider Asia.</p>
-        </div>
-        <div class="payment-card">
-          <h3 data-i18n="pay.wa.t">WhatsApp Confirmation</h3>
-          <div class="num">+255 749 256 665</div>
-          <p data-i18n="pay.wa.d">Send your payment confirmation here to activate your order.</p>
-        </div>
-
+      <div class="payments-grid payments-grid--single">
         <div class="payment-card bank-card">
           <h3 data-i18n="pay.bank">Bank Transfer</h3>
           <div class="bank-details">
@@ -478,8 +457,7 @@
         </div>
       </div>
 
-      <p class="form-note mt-2" data-i18n="pay.note1">Card and mobile-money checkout is being connected to a secure payment gateway. Until configured, use the numbers above or contact us on WhatsApp to complete payment.</p>
-      <p class="form-note" data-i18n="pay.note2">The payment numbers above are for sending money only. For any question, message us on WhatsApp — it works from anywhere in the world.</p>
+      <p class="form-note mt-2">After you pay, please send your payment confirmation on WhatsApp (+255 749 256 665) so we can activate your order.</p>
     </div>
   </section>
 
@@ -605,7 +583,7 @@
         <div class="contact-card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
           <strong data-i18n="ct.lang">Languages</strong>
-          <span>English · Kiswahili · Tagalog</span>
+          <span>English · Kiswahili</span>
         </div>
         <div class="contact-card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>
@@ -645,7 +623,7 @@
         </details>
         <details class="faq-item">
           <summary class="faq-q"><span data-i18n="faq.4.q">Do you work with clients outside Tanzania?</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></summary>
-          <p class="faq-a" data-i18n="faq.4.a">Yes — Imarixa Tech serves clients in the Philippines and around the world, with GCash available for payments from the Philippines and Asia.</p>
+          <p class="faq-a">Yes. Imarixa Tech serves clients in the Philippines and around the world.</p>
         </details>
       </div>
     </div>
@@ -698,12 +676,7 @@
       <div class="footer-col">
         <h4 data-i18n="ft.pay">Payment Methods</h4>
         <ul>
-          <li>M-PESA</li>
-          <li>Airtel Money</li>
-          <li>Mixx by Yas</li>
-          <li>Visa / Mastercard</li>
           <li data-i18n="pay.bank">Bank Transfer</li>
-          <li>GCash</li>
         </ul>
       </div>
     </div>
