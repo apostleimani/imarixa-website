@@ -59,6 +59,27 @@
   }
 }
 </script>
+<style>
+/* Moving poster slideshow */
+.promo-wrap{position:relative}
+.promo-slider{position:relative;overflow:hidden;padding:8px 0;
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent);
+  mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent)}
+.promo-track{display:flex;gap:20px;width:max-content;will-change:transform}
+.promo-slider .promo-card{flex:0 0 auto;display:block;border-radius:18px;overflow:hidden;background:#fff;
+  box-shadow:0 10px 30px rgba(10,25,60,.18);transition:transform .25s ease}
+.promo-slider .promo-card img{display:block;height:clamp(300px,44vw,540px);width:auto;max-width:none}
+.promo-slider .promo-card:hover{transform:translateY(-4px)}
+.promo-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:0;
+  background:#fff;color:#0b1f4d;font-size:30px;line-height:1;cursor:pointer;z-index:3;
+  box-shadow:0 6px 18px rgba(10,25,60,.28);display:flex;align-items:center;justify-content:center;padding:0 0 4px}
+.promo-btn:hover{background:#f0b90b}
+.promo-prev{left:6px}.promo-next{right:6px}
+@media (prefers-reduced-motion:reduce){
+  .promo-slider{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
+  .promo-slider .promo-card[aria-hidden="true"],.promo-btn{display:none}
+}
+</style>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
@@ -372,19 +393,37 @@
   <!-- ============ WEBSITE ADVERT ============ -->
   <section class="section-pad" id="website-advert">
     <div class="container">
-      <div class="promo-grid">
-        <a class="promo-card" href="assets/images/services-devices.webp" target="_blank" rel="noopener">
+      <div class="promo-wrap">
+      <div class="promo-slider" id="promoSlider" aria-label="Imarixa Tech service posters">
+        <div class="promo-track">
+          <a class="promo-card" href="assets/images/services-devices.webp" target="_blank" rel="noopener">
           <img src="assets/images/services-devices.webp" alt="Imarixa Tech website packages and pricing (Kiswahili)" width="1254" height="1254" loading="lazy">
         </a>
-        <a class="promo-card" href="assets/images/promo-website-en.webp" target="_blank" rel="noopener">
+          <a class="promo-card" href="assets/images/promo-website-en.webp" target="_blank" rel="noopener">
           <img src="assets/images/promo-website-en.webp" alt="Imarixa Tech professional website development packages" width="1024" height="1536" loading="lazy">
         </a>
-        <a class="promo-card" href="assets/images/mobile-app-promo-full-app.webp" target="_blank" rel="noopener">
+          <a class="promo-card" href="assets/images/mobile-app-promo-full-app.webp" target="_blank" rel="noopener">
           <img src="assets/images/mobile-app-promo-full-app.webp" alt="Imarixa Tech full mobile app development, from idea to Play Store (Kiswahili)" width="1000" height="1450" loading="lazy">
         </a>
-        <a class="promo-card" href="assets/images/mobile-app-promo.webp" target="_blank" rel="noopener">
+          <a class="promo-card" href="assets/images/mobile-app-promo.webp" target="_blank" rel="noopener">
           <img src="assets/images/mobile-app-promo.webp" alt="Imarixa Tech website, mobile app and business system services (Kiswahili)" width="1148" height="1370" loading="lazy">
         </a>
+          <a class="promo-card" tabindex="-1" aria-hidden="true" href="assets/images/services-devices.webp" target="_blank" rel="noopener">
+          <img src="assets/images/services-devices.webp" alt="" width="1254" height="1254" loading="lazy">
+        </a>
+          <a class="promo-card" tabindex="-1" aria-hidden="true" href="assets/images/promo-website-en.webp" target="_blank" rel="noopener">
+          <img src="assets/images/promo-website-en.webp" alt="" width="1024" height="1536" loading="lazy">
+        </a>
+          <a class="promo-card" tabindex="-1" aria-hidden="true" href="assets/images/mobile-app-promo-full-app.webp" target="_blank" rel="noopener">
+          <img src="assets/images/mobile-app-promo-full-app.webp" alt="" width="1000" height="1450" loading="lazy">
+        </a>
+          <a class="promo-card" tabindex="-1" aria-hidden="true" href="assets/images/mobile-app-promo.webp" target="_blank" rel="noopener">
+          <img src="assets/images/mobile-app-promo.webp" alt="" width="1148" height="1370" loading="lazy">
+        </a>
+        </div>
+      </div>
+      <button type="button" class="promo-btn promo-prev" aria-label="Previous poster">&#8249;</button>
+      <button type="button" class="promo-btn promo-next" aria-label="Next poster">&#8250;</button>
       </div>
     </div>
   </section>
@@ -815,6 +854,44 @@
     window.open('https://wa.me/255749256665?text='+encodeURIComponent(msg),'_blank','noopener');
     note.textContent='WhatsApp opened. We will reply with your secure payment link.';
   });
+})();
+</script>
+<script>
+/* Moving poster slideshow: auto-scroll, pause on hover/press, arrow buttons */
+(function(){
+  var sl=document.getElementById('promoSlider'); if(!sl) return;
+  var track=sl.querySelector('.promo-track'), wrap=sl.parentNode;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var SPEED=70, GAP=20, pos=0, half=0, paused=false, last=0, hold=0, anim=null;
+  function measure(){ half=(track.scrollWidth+GAP)/2; }
+  function wrapPos(){ if(half>0){ pos=((pos%half)+half)%half; } }
+  function draw(){ track.style.transform='translate3d('+(-pos)+'px,0,0)'; }
+  function tick(t){
+    var dt=last?Math.min(0.05,(t-last)/1000):0; last=t;
+    if(!paused && !anim && !hold){ pos+=SPEED*dt; wrapPos(); draw(); }
+    requestAnimationFrame(tick);
+  }
+  function stepSize(){ var c=track.querySelector('.promo-card'); return c?c.getBoundingClientRect().width+GAP:300; }
+  function go(dir){
+    var from=pos, dist=dir*stepSize(), start=null, dur=450;
+    if(anim) return;
+    anim=true;
+    function f(t){ if(start===null) start=t; var p=Math.min(1,(t-start)/dur), e=1-Math.pow(1-p,3);
+      pos=from+dist*e; wrapPos(); draw();
+      if(p<1) requestAnimationFrame(f); else { anim=null; } }
+    requestAnimationFrame(f);
+  }
+  wrap.querySelector('.promo-prev').addEventListener('click',function(){go(-1);});
+  wrap.querySelector('.promo-next').addEventListener('click',function(){go(1);});
+  if(window.matchMedia('(hover: hover)').matches){
+    wrap.addEventListener('mouseenter',function(){paused=true;});
+    wrap.addEventListener('mouseleave',function(){paused=false;});
+  }
+  ['pointerdown','touchstart'].forEach(function(e){sl.addEventListener(e,function(){paused=true;},{passive:true});});
+  ['pointerup','pointercancel','touchend','touchcancel'].forEach(function(e){sl.addEventListener(e,function(){setTimeout(function(){paused=false;},1200);},{passive:true});});
+  track.querySelectorAll('img').forEach(function(im){ im.addEventListener('load',measure); });
+  window.addEventListener('load',measure); window.addEventListener('resize',measure);
+  measure(); requestAnimationFrame(tick);
 })();
 </script>
 <script src="js/main.js"></script>
