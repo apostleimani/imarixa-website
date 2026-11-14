@@ -470,11 +470,30 @@
     <div class="container">
       <div class="section-head">
         <span class="section-kicker">Payment</span>
-        <h2>Pay by bank transfer</h2>
-        <p>Payments are received by bank transfer. We send the account details on WhatsApp once your quote is confirmed.</p>
+        <h2>Pay online or by bank transfer</h2>
+        <p>Pay securely with mobile money (M-Pesa, Airtel Money, Mixx, Halotel), card or QR, or request our bank details on WhatsApp.</p>
       </div>
 
-      <div class="payments-grid payments-grid--single">
+      <div class="payments-grid">
+        <div class="payment-card online-card">
+          <h3>Pay Online</h3>
+          <p>Choose your package and pay securely with mobile money, card or QR.</p>
+          <form id="payForm" class="mt-2" novalidate>
+            <label for="payPackage">Package</label>
+            <select id="payPackage" required>
+              <option value="landing">Landing — TZS 450,000</option>
+              <option value="business">Business — TZS 950,000</option>
+              <option value="pro">Business Pro — TZS 1,450,000</option>
+              <option value="store">Online Store — TZS 2,800,000</option>
+            </select>
+            <label for="payName" class="mt-1">Full name</label>
+            <input type="text" id="payName" autocomplete="name" required>
+            <label for="payEmail" class="mt-1">Email</label>
+            <input type="email" id="payEmail" autocomplete="email" required>
+            <button type="submit" class="btn btn-whatsapp mt-2" id="payBtn">Pay now</button>
+            <p class="form-note mt-1" id="payStatus" role="status"></p>
+          </form>
+        </div>
         <div class="payment-card bank-card">
           <h3 data-i18n="pay.bank">Bank Transfer</h3>
           <p>For your security, we do not publish our bank account details on this website. Message us on WhatsApp and we will send them to you directly.</p>
@@ -704,6 +723,7 @@
       <div class="footer-col">
         <h4 data-i18n="ft.pay">Payment Methods</h4>
         <ul>
+          <li>Mobile Money &amp; Card</li>
           <li data-i18n="pay.bank">Bank Transfer</li>
         </ul>
       </div>
@@ -781,6 +801,25 @@
     if (w) { w.opener = null; } else { window.location.href = url; }
     sent = true; setNote('sent');
   }, true);
+})();
+</script>
+<script>
+/* Online payment: asks our payment function for a Snippe checkout link, then redirects */
+(function(){
+  var form=document.getElementById('payForm'); if(!form) return;
+  var API='https://pay.imarixatech.com/create-payment'; /* <- your Cloudflare Worker URL */
+  var btn=document.getElementById('payBtn'), note=document.getElementById('payStatus');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=document.getElementById('payName').value.trim(), email=document.getElementById('payEmail').value.trim();
+    if(!name||!/^\S+@\S+\.\S+$/.test(email)){ note.textContent='Please enter your name and a valid email.'; return; }
+    btn.disabled=true; note.textContent='Preparing secure checkout…';
+    fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({package:document.getElementById('payPackage').value,name:name,email:email})})
+    .then(function(r){return r.json().then(function(d){if(!r.ok||!d.url) throw new Error(d.error||'failed'); return d;});})
+    .then(function(d){ window.location.href=d.url; })
+    .catch(function(){ btn.disabled=false; note.textContent='Could not start payment. Please try again or pay via WhatsApp.'; });
+  });
 })();
 </script>
 <script src="js/main.js"></script>
