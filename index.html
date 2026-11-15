@@ -112,12 +112,16 @@
 .payment-card select,.payment-card input[type="text"]{width:100%;box-sizing:border-box}
 
 /* Services as slides */
-.services-list.slider-on{list-style:none;margin:0}
-.services-list.slider-on>.service-row{flex:0 0 min(300px,82%);display:flex !important;flex-direction:column;gap:12px;
-  background:#fff;border:1px solid rgba(11,31,77,.12) !important;border-radius:18px;padding:20px !important;min-height:240px;
-  box-shadow:0 6px 18px rgba(11,31,77,.08)}
-.services-list.slider-on .service-body{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
-.services-list.slider-on .service-arrow{display:none}
+.services-list.slider-on{display:flex !important;flex-direction:row !important;flex-wrap:nowrap !important;align-items:stretch;
+  list-style:none;margin:0;border:0 !important}
+.services-list.slider-on>.service-row{flex:0 0 min(300px,82%) !important;width:auto !important;max-width:none;
+  display:flex !important;flex-direction:column !important;align-items:flex-start !important;justify-content:flex-start;gap:12px;
+  text-align:left;background:#fff;border:1px solid rgba(11,31,77,.12) !important;border-radius:18px;padding:20px !important;
+  min-height:240px;box-shadow:0 6px 18px rgba(11,31,77,.08)}
+.services-list.slider-on .service-index{width:auto !important;min-width:0 !important;margin:0 !important;text-align:left}
+.services-list.slider-on .service-body{display:flex !important;flex-direction:column !important;align-items:flex-start;gap:12px;
+  width:100%;margin:0 !important;padding:0 !important}
+.services-list.slider-on .service-arrow{display:none !important}
 </style>
 </head>
 <body>
@@ -456,6 +460,9 @@
       <div class="promo-wrap">
       <div class="promo-slider" id="promoSlider" aria-label="ImarixaTech service posters">
         <div class="promo-track">
+          <a class="promo-card" href="assets/images/logo-packages-2026.webp" target="_blank" rel="noopener">
+          <img src="assets/images/logo-packages-2026.webp" alt="ImarixaTech logo design packages: Akili TSh 200,000, Ubunifu TSh 400,000, Athari TSh 700,000 (Kiswahili)" width="1122" height="1402" loading="lazy">
+        </a>
           <a class="promo-card" href="assets/images/services-devices.webp" target="_blank" rel="noopener">
           <img src="assets/images/services-devices.webp" alt="ImarixaTech website packages and pricing (Kiswahili)" width="1254" height="1254" loading="lazy">
         </a>
@@ -467,6 +474,9 @@
         </a>
           <a class="promo-card" href="assets/images/mobile-app-promo.webp" target="_blank" rel="noopener">
           <img src="assets/images/mobile-app-promo.webp" alt="ImarixaTech website, mobile app and business system services (Kiswahili)" width="1148" height="1370" loading="lazy">
+        </a>
+          <a class="promo-card" tabindex="-1" aria-hidden="true" href="assets/images/logo-packages-2026.webp" target="_blank" rel="noopener">
+          <img src="assets/images/logo-packages-2026.webp" alt="" width="1122" height="1402" loading="lazy">
         </a>
           <a class="promo-card" tabindex="-1" aria-hidden="true" href="assets/images/services-devices.webp" target="_blank" rel="noopener">
           <img src="assets/images/services-devices.webp" alt="" width="1254" height="1254" loading="lazy">
