@@ -1,5 +1,5 @@
 /*!
- * 𝐈𝐦𝐚𝐫𝐢𝐱𝐚 𝐓𝐞𝐜𝐡 — language and market switcher
+ * 𝐈𝐦𝐚𝐫𝐢𝐱𝐚 𝐓𝐞𝐜𝐡 - language and market switcher
  * Languages: English (en), Kiswahili (sw)
  * Markets:   Tanzania (TZS) and Philippines (₱)
  * Text lives in the T object below. Elements opt in with data-i18n="key".
@@ -37,9 +37,9 @@
   "nm.wa": "Chat on WhatsApp",
   "svc.kicker": "What we do",
   "svc.h2": "Technology services built around real business needs",
-  "svc.p": "From your first website to a full business system — every service is designed to help you reach more customers and run more efficiently.",
+  "svc.p": "From your first website to a full business system, every service is designed to help you reach more customers and run more efficiently.",
   "svc.1.t": "Website Design &amp; Development",
-  "svc.1.d": "Modern, responsive websites designed for businesses and organizations — built to load fast and work beautifully on every device.",
+  "svc.1.d": "Modern, responsive websites designed for businesses and organizations, built to load fast and work beautifully on every device.",
   "svc.2.t": "E-Commerce / Online Stores",
   "svc.2.d": "Professional online stores with products, shopping cart, order management, admin panel and payment integration.",
   "svc.3.t": "SEO &amp; Digital Growth",
@@ -140,7 +140,7 @@
   "pay.bank.acc": "Account Number",
   "pay.bank.name": "Account Name",
   "pay.note1": "Card and mobile-money checkout is being connected to a secure payment gateway. Until configured, use the numbers above or contact us on WhatsApp to complete payment.",
-  "pay.note2": "The payment numbers above are for sending money only. For any question, message us on WhatsApp — it works from anywhere in the world.",
+  "pay.note2": "The payment numbers above are for sending money only. For any question, message us on WhatsApp, it works from anywhere in the world.",
   "q.kicker": "Request a quote",
   "q.h2": "Tell us about your project",
   "q.s1.t": "Fast response",
@@ -173,7 +173,7 @@
   "o.pk.none": "Not sure yet",
   "o.email": "Email",
   "q.submit": "Request a Quote",
-  "q.status": "This form is not yet connected to an email service. See <code>.env.example</code> for configuring Formspree, Resend or another form backend — until then, please also confirm your request on WhatsApp.",
+  "q.status": "This form is not yet connected to an email service. See <code>.env.example</code> for configuring Formspree, Resend or another form backend, until then, please also confirm your request on WhatsApp.",
   "ct.kicker": "Contact",
   "ct.h2": "Reach Imarixa Tech",
   "ct.email": "Email",
@@ -191,7 +191,7 @@
   "faq.3.q": "Can I upgrade my package later?",
   "faq.3.a": "Yes. Many clients start with Landing or Business and upgrade to Business Pro or Online Store as their needs grow.",
   "faq.4.q": "Do you work with clients outside Tanzania?",
-  "faq.4.a": "Yes — Imarixa Tech serves clients in the Philippines and around the world, with GCash available for payments from the Philippines and Asia.",
+  "faq.4.a": "Yes, Imarixa Tech serves clients in the Philippines and around the world, with GCash available for payments from the Philippines and Asia.",
   "cta.h2": "Build your website today.",
   "cta.p": "Tell us about your business and we'll help you choose the right package to get online.",
   "cta.b1": "Get a Quote",
@@ -207,7 +207,7 @@
   "ft.s6": "Hosting &amp; Maintenance",
   "ft.pay": "Payment Methods",
   "ft.rights": "© 2026 Imarixa Tech. All Rights Reserved.",
-  "meta.title": "Imarixa Tech — Intelligence. Innovation. Impact. | Website & Software Development, Africa & Asia",
+  "meta.title": "Imarixa Tech - Intelligence. Innovation. Impact. | Website & Software Development, Africa & Asia",
   "meta.desc": "Imarixa Tech builds intelligent websites, e-commerce stores, business software and AI-powered digital solutions for businesses in Tanzania, the Philippines and beyond. Websites from TZS 450,000 or ₱8,500.",
   "wa.hello": "Hello Imarixa Tech, I'd like to know more about your services.",
   "wa.quote": "Hello Imarixa Tech, I would like a quote for a project."
@@ -233,9 +233,9 @@
   "nm.wa": "Wasiliana nasi WhatsApp",
   "svc.kicker": "Tunachofanya",
   "svc.h2": "Huduma za teknolojia zilizojengwa kulingana na mahitaji halisi ya biashara",
-  "svc.p": "Kuanzia tovuti yako ya kwanza hadi mfumo kamili wa biashara — kila huduma imeundwa kukusaidia kufikia wateja zaidi na kuendesha biashara kwa ufanisi zaidi.",
+  "svc.p": "Kuanzia tovuti yako ya kwanza hadi mfumo kamili wa biashara, kila huduma imeundwa kukusaidia kufikia wateja zaidi na kuendesha biashara kwa ufanisi zaidi.",
   "svc.1.t": "Ubunifu na Utengenezaji wa Tovuti",
-  "svc.1.d": "Tovuti za kisasa zinazofaa simu, zilizoundwa kwa ajili ya biashara na taasisi — zinapakia haraka na kufanya kazi vizuri kwenye kila kifaa.",
+  "svc.1.d": "Tovuti za kisasa zinazofaa simu, zilizoundwa kwa ajili ya biashara na taasisi, zinapakia haraka na kufanya kazi vizuri kwenye kila kifaa.",
   "svc.2.t": "Biashara Mtandaoni / Maduka ya Mtandaoni",
   "svc.2.d": "Maduka ya kitaalamu mtandaoni yenye bidhaa, kikapu cha manunuzi, usimamizi wa oda, paneli ya usimamizi na uunganishaji wa malipo.",
   "svc.3.t": "SEO na Ukuaji wa Kidijitali",
@@ -336,7 +336,7 @@
   "pay.bank.acc": "Namba ya Akaunti",
   "pay.bank.name": "Jina la Akaunti",
   "pay.note1": "Malipo kwa kadi na pesa za simu yanaunganishwa na mfumo salama wa malipo. Hadi yatakapokamilika, tumia namba zilizo hapo juu au wasiliana nasi kupitia WhatsApp kukamilisha malipo.",
-  "pay.note2": "Namba za malipo zilizo hapo juu ni za kutuma pesa tu. Kwa swali lolote, tutumie ujumbe kupitia WhatsApp — inafanya kazi popote duniani.",
+  "pay.note2": "Namba za malipo zilizo hapo juu ni za kutuma pesa tu. Kwa swali lolote, tutumie ujumbe kupitia WhatsApp, inafanya kazi popote duniani.",
   "q.kicker": "Omba bei",
   "q.h2": "Tuambie kuhusu mradi wako",
   "q.s1.t": "Majibu ya haraka",
@@ -369,7 +369,7 @@
   "o.pk.none": "Sina uhakika bado",
   "o.email": "Barua pepe",
   "q.submit": "Omba Bei",
-  "q.status": "Fomu hii bado haijaunganishwa na huduma ya email. Tazama <code>.env.example</code> kusanidi Formspree, Resend au huduma nyingine — hadi wakati huo, tafadhali thibitisha ombi lako pia kupitia WhatsApp.",
+  "q.status": "Fomu hii bado haijaunganishwa na huduma ya email. Tazama <code>.env.example</code> kusanidi Formspree, Resend au huduma nyingine, hadi wakati huo, tafadhali thibitisha ombi lako pia kupitia WhatsApp.",
   "ct.kicker": "Mawasiliano",
   "ct.h2": "Wasiliana na Imarixa Tech",
   "ct.email": "Barua pepe",
@@ -387,7 +387,7 @@
   "faq.3.q": "Naweza kuboresha kifurushi changu baadaye?",
   "faq.3.a": "Ndiyo. Wateja wengi huanza na Landing au Business na kuboresha hadi Business Pro au Online Store mahitaji yao yanapokua.",
   "faq.4.q": "Mnafanya kazi na wateja walio nje ya Tanzania?",
-  "faq.4.a": "Ndiyo — Imarixa Tech inahudumia wateja wa Ufilipino na duniani kote, na GCash inapatikana kwa malipo kutoka Ufilipino na Asia.",
+  "faq.4.a": "Ndiyo, Imarixa Tech inahudumia wateja wa Ufilipino na duniani kote, na GCash inapatikana kwa malipo kutoka Ufilipino na Asia.",
   "cta.h2": "Jenga website yako leo.",
   "cta.p": "Tuambie kuhusu biashara yako nasi tutakusaidia kuchagua kifurushi sahihi cha kuingia mtandaoni.",
   "cta.b1": "Pata Bei",
@@ -403,7 +403,7 @@
   "ft.s6": "Hosting na Matengenezo",
   "ft.pay": "Njia za Malipo",
   "ft.rights": "© 2026 Imarixa Tech. Haki zote zimehifadhiwa.",
-  "meta.title": "Imarixa Tech — Intelligence. Innovation. Impact. | Utengenezaji wa Tovuti na Programu, Afrika na Asia",
+  "meta.title": "Imarixa Tech - Intelligence. Innovation. Impact. | Utengenezaji wa Tovuti na Programu, Afrika na Asia",
   "meta.desc": "Imarixa Tech hutengeneza tovuti mahiri, maduka ya mtandaoni, programu za biashara na suluhisho za kidijitali zinazotumia AI kwa biashara nchini Tanzania, Ufilipino na kwingineko. Tovuti kuanzia TZS 450,000 au ₱8,500.",
   "wa.hello": "Habari Imarixa Tech, ningependa kujua zaidi kuhusu huduma zenu.",
   "wa.quote": "Habari Imarixa Tech, ningependa kupata bei ya mradi."
@@ -485,7 +485,7 @@
 
     qsa('option[data-pkg]').forEach(function (o) {
       var k = o.getAttribute('data-pkg');
-      o.textContent = NAMES[k] + ' — ' + (k === 'store' ? t('pk.from.opt') + ' ' : '') + money(market, k);
+      o.textContent = NAMES[k] + ' - ' + (k === 'store' ? t('pk.from.opt') + ' ' : '') + money(market, k);
     });
 
     document.title = t('meta.title');
