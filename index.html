@@ -79,6 +79,31 @@
   .promo-slider{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
   .promo-slider .promo-card[aria-hidden="true"],.promo-btn{display:none}
 }
+
+/* Hero slideshow */
+.hero-slides{position:relative;display:grid;overflow:hidden;container-type:inline-size;aspect-ratio:1600/612;background:#0b1f4d}
+.hero-slides .hs-slide{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .9s ease,visibility .9s;min-height:0}
+.hero-slides .hs-slide.is-active{opacity:1;visibility:visible;z-index:1}
+.hero-slides .hs-slide img{display:block;width:100%;height:100%;object-fit:cover}
+.hs-text{display:flex;align-items:center;background:radial-gradient(circle at 85% 20%,rgba(240,185,11,.28),transparent 45%),linear-gradient(120deg,#0b1f4d,#1d3f94)}
+.hs-text.hs-alt{background:radial-gradient(circle at 15% 80%,rgba(240,185,11,.26),transparent 45%),linear-gradient(120deg,#13286b,#0b1f4d)}
+.hs-copy{padding:0 7cqw;color:#fff;max-width:72cqw}
+.hs-copy h2{margin:0 0 1.2cqw;font-size:clamp(17px,4.6cqw,48px);line-height:1.15;color:#fff}
+.hs-copy h2 span{color:#f0b90b}
+.hs-copy p{margin:0 0 2cqw;font-size:clamp(11px,2.3cqw,22px);line-height:1.35;color:#dfe7ff}
+.hs-btn{display:inline-block;background:#f0b90b;color:#0b1f4d;font-weight:700;text-decoration:none;border-radius:999px;
+  font-size:clamp(11px,2cqw,18px);padding:.7em 1.6em}
+.hs-dots{position:absolute;left:0;right:0;bottom:1.6cqw;display:flex;justify-content:center;gap:8px;z-index:2}
+.hs-dots button{width:9px;height:9px;padding:0;border-radius:50%;border:0;background:rgba(255,255,255,.55);cursor:pointer}
+.hs-dots button.is-active{background:#f0b90b;width:22px;border-radius:6px}
+
+/* Card sliders (packages and why-us) */
+.slide-wrap{position:relative}
+.slider-on{display:flex !important;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;padding:20px 4px 16px !important;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;grid-template-columns:none !important}
+.slider-on::-webkit-scrollbar{display:none}
+.slider-on>*{flex:0 0 min(300px,78%);scroll-snap-align:start;box-sizing:border-box}
+.slide-wrap .promo-btn{top:46%}
 </style>
 </head>
 <body>
@@ -130,8 +155,29 @@
 <main id="main">
 
   <!-- ============ TOP BANNER ============ -->
-  <section class="top-banner" id="home">
-    <img src="assets/images/hero-founder-devices.webp" alt="Imarixa Tech founder with laptop and phone website mockups. Intelligence. Innovation. Impact." width="1600" height="612" fetchpriority="high">
+  <section class="top-banner hero-slides" id="home" aria-roledescription="carousel" aria-label="Imarixa Tech highlights">
+    <div class="hs-slide is-active">
+      <img src="assets/images/hero-founder-devices.webp" alt="Imarixa Tech founder with laptop and phone website mockups. Intelligence. Innovation. Impact." width="1600" height="612" fetchpriority="high">
+    </div>
+    <div class="hs-slide hs-text">
+      <div class="hs-copy">
+        <h2>Professional websites <span>from TZS 450,000</span></h2>
+        <p>Hosting and domain included for the first year.</p>
+        <a href="#packages" class="hs-btn">View packages</a>
+      </div>
+    </div>
+    <div class="hs-slide hs-text hs-alt">
+      <div class="hs-copy">
+        <h2>Websites, mobile apps <span>&amp; business systems</span></h2>
+        <p data-i18n="pk.offer">Launch offer: 15% discount for the first 10 customers.</p>
+        <a href="https://wa.me/255749256665?text=Hello%20Imarixa%20Tech%2C%20I%20would%20like%20a%20quote." class="hs-btn" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      </div>
+    </div>
+    <div class="hs-dots" role="tablist" aria-label="Choose slide">
+      <button type="button" class="is-active" aria-label="Slide 1"></button>
+      <button type="button" aria-label="Slide 2"></button>
+      <button type="button" aria-label="Slide 3"></button>
+    </div>
   </section>
 
   <!-- ============ LOGO REVEAL VIDEO ============ -->
@@ -892,6 +938,49 @@
   track.querySelectorAll('img').forEach(function(im){ im.addEventListener('load',measure); });
   window.addEventListener('load',measure); window.addEventListener('resize',measure);
   measure(); requestAnimationFrame(tick);
+})();
+</script>
+<script>
+/* Hero crossfade slideshow + auto-moving card sliders */
+(function(){
+  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hero=document.getElementById('home');
+  if(hero && hero.classList.contains('hero-slides')){
+    var slides=hero.querySelectorAll('.hs-slide'), dots=hero.querySelectorAll('.hs-dots button'), cur=0, hold=false, t;
+    function show(i){ cur=(i+slides.length)%slides.length;
+      slides.forEach(function(x,k){x.classList.toggle('is-active',k===cur);});
+      dots.forEach(function(x,k){x.classList.toggle('is-active',k===cur);}); }
+    function start(){ clearInterval(t); if(!reduced) t=setInterval(function(){ if(!hold) show(cur+1); },5000); }
+    dots.forEach(function(d,k){ d.addEventListener('click',function(){ show(k); start(); }); });
+    hero.addEventListener('mouseenter',function(){hold=true;}); hero.addEventListener('mouseleave',function(){hold=false;});
+    hero.addEventListener('touchstart',function(){hold=true;},{passive:true});
+    hero.addEventListener('touchend',function(){setTimeout(function(){hold=false;},2500);},{passive:true});
+    start();
+  }
+
+  function slider(grid){
+    if(!grid) return;
+    var wrap=document.createElement('div'); wrap.className='slide-wrap';
+    grid.parentNode.insertBefore(wrap,grid); wrap.appendChild(grid); grid.classList.add('slider-on');
+    var prev=document.createElement('button'), next=document.createElement('button');
+    prev.type=next.type='button'; prev.className='promo-btn promo-prev'; next.className='promo-btn promo-next';
+    prev.setAttribute('aria-label','Previous'); next.setAttribute('aria-label','Next'); prev.innerHTML='&#8249;'; next.innerHTML='&#8250;';
+    wrap.appendChild(prev); wrap.appendChild(next);
+    var hold=false, seen=true, last=0;
+    function step(){ var c=grid.firstElementChild; if(!c) return 300; var g=parseFloat(getComputedStyle(grid).columnGap)||16; return c.getBoundingClientRect().width+g; }
+    function adv(dir){ var max=grid.scrollWidth-grid.clientWidth; if(max<=4) return;
+      if(dir>0){ if(grid.scrollLeft>=max-4) grid.scrollTo({left:0,behavior:'smooth'}); else grid.scrollBy({left:step(),behavior:'smooth'}); }
+      else { if(grid.scrollLeft<=4) grid.scrollTo({left:max,behavior:'smooth'}); else grid.scrollBy({left:-step(),behavior:'smooth'}); } }
+    prev.addEventListener('click',function(){last=Date.now();adv(-1);}); next.addEventListener('click',function(){last=Date.now();adv(1);});
+    wrap.addEventListener('mouseenter',function(){hold=true;}); wrap.addEventListener('mouseleave',function(){hold=false;});
+    wrap.addEventListener('focusin',function(){hold=true;}); wrap.addEventListener('focusout',function(){hold=false;});
+    grid.addEventListener('touchstart',function(){hold=true;},{passive:true});
+    grid.addEventListener('touchend',function(){setTimeout(function(){hold=false;},3500);},{passive:true});
+    if('IntersectionObserver' in window){ new IntersectionObserver(function(e){seen=e[0].isIntersecting;},{threshold:0.01}).observe(wrap); }
+    if(!reduced) setInterval(function(){ if(!hold && seen && Date.now()-last>3500) adv(1); },3200);
+  }
+  slider(document.getElementById('pricingGrid'));
+  slider(document.querySelector('.why-grid'));
 })();
 </script>
 <script src="js/main.js"></script>
