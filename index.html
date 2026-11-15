@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Imarixa Tech — Intelligence. Innovation. Impact. | Website & Software Development, Africa & Asia</title>
+<title>Imarixa Tech - Intelligence. Innovation. Impact. | Website & Software Development, Africa & Asia</title>
 <meta name="description" content="Imarixa Tech builds intelligent websites, e-commerce stores, business software and AI-powered digital solutions for businesses in Tanzania and beyond. Websites from TZS 450,000.">
 <link rel="canonical" href="https://imarixatech.com/">
 
@@ -18,17 +18,17 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Imarixa Tech">
-<meta property="og:title" content="Imarixa Tech — Intelligence. Innovation. Impact.">
+<meta property="og:title" content="Imarixa Tech - Intelligence. Innovation. Impact.">
 <meta property="og:description" content="Building intelligent technology for a changing world. Websites, e-commerce, business software and AI-powered solutions for Tanzanian and international businesses.">
 <meta property="og:image" content="https://imarixatech.com/assets/images/social-share-v3.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Imarixa Tech — Intelligence. Innovation. Impact.">
+<meta property="og:image:alt" content="Imarixa Tech - Intelligence. Innovation. Impact.">
 <meta property="og:url" content="https://imarixatech.com/">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Imarixa Tech — Intelligence. Innovation. Impact.">
+<meta name="twitter:title" content="Imarixa Tech - Intelligence. Innovation. Impact.">
 <meta name="twitter:description" content="Building intelligent technology for a changing world.">
 <meta name="twitter:image" content="https://imarixatech.com/assets/images/social-share-v3.jpg">
 
@@ -104,6 +104,12 @@
 .slider-on::-webkit-scrollbar{display:none}
 .slider-on>*{flex:0 0 min(300px,78%);scroll-snap-align:start;box-sizing:border-box}
 .slide-wrap .promo-btn{top:46%}
+
+/* Our Values as slides, and wider payment cards */
+.values-grid.slider-on>.value-chip{flex:0 0 min(260px,78%);min-width:0;overflow-wrap:break-word}
+.payments-grid{display:grid !important;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr)) !important;gap:24px}
+.payment-card{width:100%;max-width:none;min-width:0;box-sizing:border-box;padding:28px}
+.payment-card select,.payment-card input[type="text"]{width:100%;box-sizing:border-box}
 </style>
 </head>
 <body>
@@ -251,7 +257,7 @@
       <div class="section-head">
         <span class="section-kicker" data-i18n="svc.kicker">What we do</span>
         <h2 data-i18n="svc.h2">Technology services built around real business needs</h2>
-        <p data-i18n="svc.p">From your first website to a full business system — every service is designed to help you reach more customers and run more efficiently.</p>
+        <p data-i18n="svc.p">From your first website to a full business system, every service is designed to help you reach more customers and run more efficiently.</p>
       </div>
 
       <ul class="services-list">
@@ -261,7 +267,7 @@
             <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
             <div>
               <div class="service-title" data-i18n="svc.1.t">Website Design &amp; Development</div>
-              <div class="service-desc" data-i18n="svc.1.d">Modern, responsive websites designed for businesses and organizations — built to load fast and work beautifully on every device.</div>
+              <div class="service-desc" data-i18n="svc.1.d">Modern, responsive websites designed for businesses and organizations, built to load fast and work beautifully on every device.</div>
             </div>
           </div>
           <span class="service-arrow" aria-hidden="true">→</span>
@@ -566,10 +572,10 @@
           <form id="payForm" class="mt-2" novalidate>
             <label for="payPackage">Package</label>
             <select id="payPackage">
-              <option value="Landing website - TZS 450,000">Landing — TZS 450,000</option>
-              <option value="Business website - TZS 950,000">Business — TZS 950,000</option>
-              <option value="Business Pro website - TZS 1,450,000">Business Pro — TZS 1,450,000</option>
-              <option value="Online Store - from TZS 2,800,000">Online Store — from TZS 2,800,000</option>
+              <option value="Landing website - TZS 450,000">Landing - TZS 450,000</option>
+              <option value="Business website - TZS 950,000">Business - TZS 950,000</option>
+              <option value="Business Pro website - TZS 1,450,000">Business Pro - TZS 1,450,000</option>
+              <option value="Online Store - from TZS 2,800,000">Online Store - from TZS 2,800,000</option>
             </select>
             <label for="payName" class="mt-1">Full name</label>
             <input type="text" id="payName" autocomplete="name">
@@ -652,10 +658,10 @@
             <label for="package" data-i18n="f.package">Preferred package</label>
             <select id="package" name="package">
               <option data-i18n="o.pk.none">Not sure yet</option>
-              <option data-pkg="landing">Landing — TZS 450,000</option>
-              <option data-pkg="business">Business — TZS 950,000</option>
-              <option data-pkg="pro">Business Pro — TZS 1,450,000</option>
-              <option data-pkg="store">Online Store — from TZS 2,800,000</option>
+              <option data-pkg="landing">Landing - TZS 450,000</option>
+              <option data-pkg="business">Business - TZS 950,000</option>
+              <option data-pkg="pro">Business Pro - TZS 1,450,000</option>
+              <option data-pkg="store">Online Store - from TZS 2,800,000</option>
             </select>
           </div>
         </div>
@@ -981,6 +987,7 @@
   }
   slider(document.getElementById('pricingGrid'));
   slider(document.querySelector('.why-grid'));
+  slider(document.querySelector('.values-grid'));
 })();
 </script>
 <script src="js/main.js"></script>
