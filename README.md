@@ -1,8 +1,8 @@
-# IMARIXA Tech — Website
+# ImarixaTech Website
 
 **Intelligence. Innovation. Impact.**
 
-Production-ready marketing website for IMARIXA, a technology company offering website design, e-commerce, SEO, professional email, AI/automation and business software to clients in Tanzania and internationally.
+Production-ready marketing website for ImarixaTech, a technology company offering website design, e-commerce, SEO, professional email, AI/automation and business software to clients in Tanzania and internationally.
 
 Static HTML/CSS/JS. No build step, no framework, no external dependencies beyond Google Fonts.
 
@@ -65,7 +65,7 @@ Or open `index.html` directly in a browser (some relative-path behavior may diff
 
 1. Add a `CNAME` file at the project root containing only your domain, e.g.:
    ```
-   www.imarixa.com
+   www.imarixatech.com
    ```
 2. In **Settings → Pages**, enter the same custom domain and enable **Enforce HTTPS**.
 3. At your DNS provider, create:
@@ -79,47 +79,47 @@ No `CNAME` file is included by default since a confirmed domain wasn't provided.
 
 ## Connecting the quote form
 
-The form (`#quoteForm` in `index.html`, handled in `js/main.js`) currently opens a prefilled WhatsApp message instead of submitting anywhere — no backend is pretended to exist. To connect a real backend:
+The form (`#quoteForm` in `index.html`, handled in `js/main.js`) currently opens a prefilled WhatsApp message instead of submitting anywhere. No backend is pretended to exist. To connect a real backend:
 
-**Option A — Formspree** (fastest)
+**Option A: Formspree** (fastest)
 1. Create a form at [formspree.io](https://formspree.io) and copy the form ID.
 2. Set the form's `action` to `https://formspree.io/f/YOUR_ID` and `method="POST"`.
 3. Remove or adjust the WhatsApp-only fallback in `main.js` once submissions are confirmed working.
 
-**Option B — Resend / a serverless function**
+**Option B: Resend / a serverless function**
 1. Add `RESEND_API_KEY` and related values to your deployment environment (see `.env.example`).
 2. Create a serverless function (Cloudflare Worker, Vercel/Netlify function, etc.) that receives the form POST and sends an email via Resend.
 3. Point the form's `action` at that function's endpoint.
 
-**Option C — EmailJS**
+**Option C: EmailJS**
 1. Set up a service/template at [emailjs.com](https://www.emailjs.com).
 2. Add the EmailJS SDK and call `emailjs.send()` from `main.js` using the IDs in `.env.example`.
 
-Whichever you choose, never commit real API keys — use environment variables in your hosting provider's dashboard (GitHub Actions secrets, Vercel/Netlify env vars, etc.), referencing the names in `.env.example`.
+Whichever you choose, never commit real API keys. Use environment variables in your hosting provider's dashboard (GitHub Actions secrets, Vercel/Netlify env vars, etc.), referencing the names in `.env.example`.
 
 ---
 
 ## Connecting a real payment gateway
 
-The Payments section currently displays IMARIXA's public payment numbers and bank details only — no live checkout is wired up, and none is claimed to exist.
+The Payments section currently displays ImarixaTech's public payment numbers and bank details only. No live checkout is wired up, and none is claimed to exist.
 
 To go live:
 1. Choose a provider that supports Tanzanian mobile money (e.g. Selcom, ClickPesa) and/or cards (Stripe, Flutterwave, DPO).
 2. Implement checkout as: **Frontend → your serverless backend → payment provider**. Never call payment provider secret endpoints directly from frontend JS.
-3. Store `PAYMENT_PROVIDER_API_KEY`, `PAYMENT_PROVIDER_SECRET`, and `PAYMENT_WEBHOOK_SECRET` (see `.env.example`) only in your backend/serverless environment variables — never in this repository.
+3. Store `PAYMENT_PROVIDER_API_KEY`, `PAYMENT_PROVIDER_SECRET`, and `PAYMENT_WEBHOOK_SECRET` (see `.env.example`) only in your backend/serverless environment variables. Never in this repository.
 4. Replace the "Gateway configuration required" badge in the Visa/Mastercard payment card once live.
 
 ---
 
 ## Social media links
 
-Update the `href` values in the Contact section and footer of `index.html`, and the `sameAs` array in the JSON-LD block at the top of `index.html`, to match confirmed official accounts only. Do not add accounts that aren't documented as official IMARIXA channels.
+Update the `href` values in the Contact section and footer of `index.html`, and the `sameAs` array in the JSON-LD block at the top of `index.html`, to match confirmed official accounts only. Do not add accounts that aren't documented as official ImarixaTech channels.
 
 ---
 
 ## Editing content
 
-All copy, pricing, and package details are sourced from the IMARIXA company profile and promotional flyers. If prices or packages change:
+All copy, pricing, and package details are sourced from the ImarixaTech company profile and promotional flyers. If prices or packages change:
 - Update the four `.price-card` blocks in `index.html` (`#packages`)
 - Update the matching `<option>` list in the quote form's package `<select>`
 - Update `js/main.js` only if package `data-package` / `data-price` attribute names change
@@ -140,4 +140,4 @@ All copy, pricing, and package details are sourced from the IMARIXA company prof
 
 ---
 
-© 2026 IMARIXA. All Rights Reserved.
+© 2026 ImarixaTech. All Rights Reserved.
