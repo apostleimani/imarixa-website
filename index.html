@@ -69,6 +69,8 @@
 <style>
 /* Logo (ImarixaTech brand identity pack) */
 .nav-brand img,.footer-brand img{height:44px;width:auto;max-width:100%;border-radius:8px;display:block}
+.nav-brand img.nav-logo-square{height:56px;width:56px;max-width:none;border-radius:12px;object-fit:contain}
+@media (max-width:640px){.nav-brand img.nav-logo-square{height:60px;width:60px}}
 
 /* Moving poster slideshow */
 .promo-wrap{position:relative}
@@ -141,7 +143,7 @@
 <header class="site-header">
   <nav class="nav" aria-label="Primary">
     <a href="#home" class="nav-brand">
-      <img src="assets/brand/logo-imarixatech-3d.webp" alt="ImarixaTech logo" width="185" height="44">
+      <img class="nav-logo-square" src="assets/brand/logo-ix-square.png?v=1" alt="ImarixaTech logo" width="300" height="300">
     </a>
     <div class="nav-links">
       <a href="#services" data-i18n="nav.services">Services</a>
